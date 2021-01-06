@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Calculadora de Bases Numéricas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br>
+  <ion-item>
+    <ion-label>Digite um número:</ion-label>
+    <ion-input [(ngModel)]="numero"></ion-input>
+  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-label>Converter de:</ion-label>
+      <ion-select interface="popover" [(ngModel)]=base_x id="base_x">
+        <ion-select-option value="bin">Binário</ion-select-option>
+        <ion-select-option value="octal">Octal</ion-select-option>
+        <ion-select-option value="dec">Decimal</ion-select-option>
+        <ion-select-option value="hexa">Hexadecimal</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-radio-group allow-empty-selection value="converterpara" [(ngModel)]=base_y id="base_y">
+    <ion-list-header>
+      <ion-label>Converter para:</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Binário</ion-label>
+      <ion-radio slot="end" color="secondary" value="bin"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Octal</ion-label>
+      <ion-radio slot="end" color="secondary" value="octal"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Decimal</ion-label>
+      <ion-radio slot="end" color="secondary" value="dec"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hexadecimal</ion-label>
+      <ion-radio slot="end" color="secondary" value="hexa"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+  <ion-row>
+    <ion-col size="4"></ion-col>
+    <ion-col size="4"> 
+      <ion-button (click)="bases()" color="medium">Converter</ion-button> 
+    </ion-col>
+    <ion-col size="4"></ion-col>
+  </ion-row>
+
+</ion-content>
